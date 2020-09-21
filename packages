@@ -33,6 +33,9 @@ sudo apt install com.github.davidmhewitt.clipped
 # Gpart
 sudo apt install gpart
 
+# Programming
+sudo snap install pycharm-community --classic
+
 # I honesly don't trust myself or others to update their system
 sudo apt update
 sudo apt dist-upgrade
