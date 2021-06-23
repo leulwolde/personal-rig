@@ -54,8 +54,6 @@ sudo apt install tilix
 sudo apt install pavucontrol
 sudo apt install blueman
 
-
-
 # I honesly don't trust myself or others to update their system
 sudo apt update
 sudo apt dist-upgrade
@@ -64,4 +62,12 @@ sudo apt dist-upgrade
 mkdir bin
 cd bin
 nano update
-echo 
+echo "#!/bin/bash" >> update
+echo "sudo apt update" >> update
+echo "sudo apt dist-upgrade" >> update
+echo "sudo apt autoremove"
+echo "sudo apt autoclean" >> update
+echo "sudo apt update" >> update
+echo "sudo apt dist-upgrade" >> update
+chmod +x  update
+
