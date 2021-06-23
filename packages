@@ -9,9 +9,17 @@ sudo apt dist-upgrade
 sudo apt install snapd
 
 # Browsers
+#Firefox
 sudo apt install firefox
+#Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+#Brave
+sudo apt install apt-transport-https curl
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
 
 # Teamviewer
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
@@ -27,9 +35,9 @@ sudo add-apt-repository universe
 sudo apt install gnome-tweak-tool
 sudo apt install $(apt search gnome-shell-extension | grep ^gnome | cut -d / -f1)
 
-# LibreOffice
+# Production
 sudo apt install libreoffice libreoffice-gtk3 libreoffice-style-elementary
-
+sudo snap install Kdenlive
 # Clip board
 sudo apt install com.github.davidmhewitt.clipped
 
@@ -37,8 +45,23 @@ sudo apt install com.github.davidmhewitt.clipped
 sudo apt install gpart
 
 # Programming
+#pycharm
 sudo snap install pycharm-community --classic
+#Tilix
+sudo apt install tilix
+
+#Sound
+sudo apt install pavucontrol
+sudo apt install blueman
+
+
 
 # I honesly don't trust myself or others to update their system
 sudo apt update
 sudo apt dist-upgrade
+
+#Personal Bin folder
+mkdir bin
+cd bin
+nano update
+echo 
