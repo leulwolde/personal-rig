@@ -5,60 +5,46 @@
 sudo apt update
 sudo apt dist-upgrade
 
-# For special package installs
-sudo apt install snapd
-
-# Browsers
-#Firefox
-sudo apt install firefox
 #Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-#Brave
-sudo apt install apt-transport-https curl
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
-sudo apt install brave-browser
-
-# Teamviewer
-wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-sudo apt install ./teamviewer_amd64.deb
-
-# Variety
-sudo add-apt-repository ppa:peterlevi/ppa
-sudo apt-get update
-sudo apt-get install variety variety-slideshow
-
-# Tweaks
-sudo add-apt-repository universe
-sudo apt install gnome-tweak-tool
-sudo apt install $(apt search gnome-shell-extension | grep ^gnome | cut -d / -f1)
-
-# Production
-sudo apt install libreoffice libreoffice-gtk3 libreoffice-style-elementary
-sudo snap install Kdenlive
-# Clip board
-sudo apt install com.github.davidmhewitt.clipped
 
 # Gpart
 sudo apt install gpart
 
-# Programming
-#pycharm
-sudo snap install pycharm-community --classic
+# Programming 
+
+sudo apt install snapd
+
 #Tilix
 sudo apt install tilix
+sudo apt update
+sudo apt install software-properties-common apt-transport-https wget
+
+#Virtualbox
+sudo apt install virtualbox
+
+# Import the Microsoft GPG key
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+
+# Add the VS Code repository
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt update
+sudo apt install code
 
 #Sound
 sudo apt install pavucontrol
 sudo apt install blueman
 
-# I honesly don't trust myself or others to update their system
+#Screenshot
+sudo apt install flameshot
+
+
 sudo apt update
 sudo apt dist-upgrade
 
 #Personal Bin folder
+cd ~
 mkdir bin
 cd bin
 nano update
@@ -70,4 +56,3 @@ echo "sudo apt autoclean" >> update
 echo "sudo apt update" >> update
 echo "sudo apt dist-upgrade" >> update
 chmod +x  update
-
