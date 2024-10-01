@@ -1,5 +1,5 @@
 #!/bin/bash
-# Downloads and install all the packages that I like.
+# installing all the packages that I like.
 
 # I honesly don't trust myself or others to update their system
 sudo apt update
@@ -38,7 +38,6 @@ sudo apt install blueman
 
 #Screenshot
 sudo apt install flameshot
-
 
 sudo apt update
 sudo apt dist-upgrade
